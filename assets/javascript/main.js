@@ -2,6 +2,7 @@ let articles = [];
 let begin_date = "20170101";
 let end_date = "20170110";
 let query = "Japan";
+let records = 10;
 let offset = 0;
 
 let call = function(){
@@ -12,7 +13,7 @@ let call = function(){
       'begin_date': begin_date,
       'end_date': end_date,
       'q': query, 
-      'offset': offset
+      'offset': offset,
     });
     $.ajax({
       url: url,
@@ -38,17 +39,22 @@ let pinArticle = function(n){
     snippet.addClass("snippet");
     snippet.text(articles[n].snippet);
 
+    let pubDate = $("<div>");
+    pubDate.addClass("date");
+    pubDate.text(articles[n].pub_date);
+
     let link = $("<a>");
     link.attr("href", articles[n].web_url);
 
-    article.append(link);
     article.append(snippet);
+    article.append(link);
+    article.append(pubDate);
 
-    $("#test").append(article);
+    $("#top-articles").append(article);
 }
 
 let pinAllArticles = function(){
-    for(i=0; i < articles.length; i++){
+    for(i=0; i < records; i++){
         let article = $("<div>");
         article.addClass("article");
         article.html(articles[i].headline.main);
@@ -58,13 +64,23 @@ let pinAllArticles = function(){
         let link = $("<div>");
         link.addClass("link");
         link.html('<a href="' + articles[i].web_url + '" target="_blank"> Read Article </a>');
-
+        let pubDate = $("<div>");
+        pubDate.addClass("date");
+        pubDate.text(articles[i].pub_date);
+    
         article.append(snippet);
         article.append(link);
+        article.append(pubDate);
 
-        $("#test").append(article);
+
+        $("#top-articles").append(article);
 
     }
+
+}
+
+const checkDate = function(){
+    parseInt();
 
 }
 
@@ -76,6 +92,11 @@ const setStartDate = function(){
     begin_date = $("#start-date").val();
 }
 
+const setResultNumber = function(){
+    results = $("#result-num").val();
+}
+
+
 const setEndDate = function(){
     end_date = $("#end-date").val();
 }
@@ -84,3 +105,12 @@ const setQuery = function(){
     query = $("#query").val();
 }
 
+
+$(document).ready(function() {
+    
+    $("body").on("click", "#search-btn", function(){
+        call().done(function(){
+            pinAllArticles();
+        });
+    })
+});

@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NYT App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="assets/javascript/main.js"></script>
-</head>
-<body>
-    <div id="test"></div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>NY Times Search</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lora|Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="assets/javascript/main.js"></script>
+    </head>
+    <body>
+
+        <div id="header" class="navbar navbar-expand-lg navbar-dark bg-dark navbar-center">
+            <h1>New York Times Search</h1>
+        </div>
+
+        <div class="container mt-5" id="search-parameters">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Search Term:</label>
+                    <input type="email" class="form-control" id="search-term">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Number of Records:</label>
+                    <select class="form-control" id="numbOfRecords">
+                    <option id="result-num">1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                        <label for="exampleFormControlInput1">Start Year (optional):</label>
+                        <input type="email" class="form-control" id="start-date">
+                </div>
+                <div class="form-group">
+                        <label for="exampleFormControlInput1">End Year (optional):</label>
+                        <input class="form-control" id="end-year">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-dark  m-1 float-left" id="search-btn">Search</button>
+                </div>
+                <div>
+                        <button type="button" class="btn btn-dark m-1 float-left" id="clear">Clear Results</button>
+                </div>               
+             
+            </form>
+        </div>
+        <div class="container">
+            <div class"col-md-12" id="top-articles"></div>
+        </div>
+        
+    </body>
+
+
 </html>
+
