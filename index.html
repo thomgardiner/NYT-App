@@ -5,7 +5,7 @@
         <title>NY Times Search</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lora|Lato" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         
     </head>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Number of Records:</label>
-                        <select class="form-control" id="numbOfRecords">
+                        <select class="form-control" id="numbOfRecords" id="results-num">
                         <option id="result-num">1</option>
                         <option>5</option>
                         <option>10</option>
@@ -42,10 +42,10 @@
                             <input class="form-control" id="end-year">
                     </div>
                     <div>
-                        <button type="button" class="btn btn-dark  m-1 float-left">Search</button>
+                        <button type="button" class="btn btn-dark  m-1 float-left" id="search-btn">Search</button>
                     </div>
                     <div>
-                            <button type="button" class="btn btn-dark m-1 float-left">Clear Results</button>
+                        <button type="button" class="btn btn-dark m-1 float-left" id="clear-btn">Clear Results</button>
                     </div>               
                 </form>
                 </div>
@@ -53,17 +53,17 @@
         </div>
 
         <div id="top-articles" class="container">
-            <div class="card border-dark mb-3">
+            <div class="card border-dark mb-3" id="article-container">
                 <div class="card-header">
                     Top Results
                 </div>
-                <div class="card-body">
-                </div>
 
         </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/main.js"></script>
     </body>
 
 

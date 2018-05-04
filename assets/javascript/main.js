@@ -50,7 +50,7 @@ let pinArticle = function(n){
     article.append(link);
     article.append(pubDate);
 
-    $("#top-articles").append(article);
+    $("#article-container").append(article);
 }
 
 let pinAllArticles = function(){
@@ -73,7 +73,7 @@ let pinAllArticles = function(){
         article.append(pubDate);
 
 
-        $("#top-articles").append(article);
+        $("#article-container").append(article);
 
     }
 
@@ -98,19 +98,38 @@ const setResultNumber = function(){
 
 
 const setEndDate = function(){
-    end_date = $("#end-date").val();
+    end_date = $("#end-year").val();
 }
 
 const setQuery = function(){
-    query = $("#query").val();
+    query = $("#search-term").val();
 }
 
+const populateVariables = function(){
+    setQuery();
+    setStartDate();
+    setEndDate();
+    setResultNumber();
+ }
+
+ const clearInputs = function(){
+
+    $("#search-term").val("");
+    $("#start-date").val("");
+    $("#end-year").val("");
+
+
+ }
 
 $(document).ready(function() {
     
     $("body").on("click", "#search-btn", function(){
-        call().done(function(){
-            pinAllArticles();
-        });
+        populateVariables();
+        call();
+        setTimeout(pinAllArticles, 1000);
+        clearInputs();
+    })
+    $("body").on("click", "#clear-btn", function(){
+        clearArticles();
     })
 });
