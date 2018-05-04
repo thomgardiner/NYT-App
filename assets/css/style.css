@@ -1,5 +1,24 @@
-#top-articles{
 
-    margin-top: 5px;
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+li {
+    display: block;
+    font-family: 'Lora', serif;
+    color: white;
+    font-size: 44px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;  
 }
